@@ -1,0 +1,387 @@
+:root{
+    --color: #9520cf;
+}
+.bg{
+    background-color: #9520cf;
+}
+.jumbotron{
+    color: #ffff;
+    background-color: rgba(0, 0, 0, 0.808);
+    height: 50vh;
+}
+.jumbotron-text{
+    font-size: 4rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;500;600&family=Raleway:wght@400;500;600&display=swap');
+
+
+body *[class*='-section'] .container {
+    margin-left: 120px !important;
+    margin-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-primary {
+    position: relative;
+    background: linear-gradient(180deg, #6F6CEB 0%, #8566D7 100%);
+    background-size: 110% 110%;
+    color: white;
+    border-color: transparent;
+    transition: all .3s ease;
+}
+
+.btn-primary:hover {
+    border-color: transparent;
+    background: linear-gradient(280deg, #5f5ddd 0%, #7659c7 100%);
+}
+
+.video-background{
+    position: absolute;/*reste sur le header en tant que enfant*/
+    right: 0;/*droite a 0*/
+    bottom: 0;/*le bas de la video à 0 recouvre son parent entierement*/
+    min-height: 100%; /*fullscreen quelque soit la taille de l'ecran il sera tjrs a 100% de hauteur */
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100; /*mettre la video en tant que derniere element de la boite*/
+}
+/*aspect media de l'ecran avec la propriete media query*/
+/*il garde le ratio de 16/9 quelque soit le redimensemt de la fenetre*/
+@media (min-aspect-ratio:16/9){
+   .video-background{
+       width:100%;
+       height: auto;
+   }
+}
+@media (max-aspect-ratio:16/9){
+    .video-background{
+        width:auto;
+        height:100%;
+    }
+ }
+
+
+
+header .btn-outline-primary {
+    z-index: 0;
+    position: relative;
+    border: 1px solid #736AE6;
+    color: #736AE6;
+}
+header .btn-outline-primary:hover {
+    background: none;
+    border-color: transparent;
+    transition: .1s ease border-color .3s;
+}
+header .btn-outline-primary::before {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: -.5px;
+    height: calc(100% + 1px);
+    width: 0%;
+    content: "";
+    background: linear-gradient(180deg, #5f5ddd 0%, #7659c7 100%);
+    transition: .3s ease width;
+}
+header .btn-outline-primary:hover::before{
+    width: calc(100% + 2px);
+}
+
+.h1-primary {
+    background: linear-gradient(180deg, #7977f1 0%, #785cc5 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+}
+
+.navbar-section {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-brand {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    mix-blend-mode: normal;
+    text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.25);
+}
+
+.nav-link {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.nav-link:hover {
+    color:  #785cc5 !important;
+}
+
+.nav-item.active .nav-link {
+    color: #5f5ddd !important;
+}
+
+/*
+ * Header Section
+ */
+
+.header-section {
+    background: rgba(13, 13, 14, 0.6);/*couleur de fond transparent*/
+    height: 100vh;
+    width: 100%;
+    padding-top: 170px;
+}
+
+.header-section h1 {
+    font-size: 80px;
+    color: #8566D7;
+    margin-bottom: 0;
+}
+
+.header-section h2 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 58px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.header-section .btn {
+    padding: .7em 1.5em;
+    margin-right: .7em;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+.header-section p {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 20px;
+    letter-spacing: .6px;
+    font-weight: 500;
+    width: 50%;
+}
+
+/*
+ * About Section
+ */
+
+.about-section {
+    background: linear-gradient(79.64deg, #1E242D 0%, rgba(40, 47, 57, 0.95) 100.44%);
+    background-attachment: fixed;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.15);
+    color: white;
+    height: 680px;
+    padding-top: 110px;
+    overflow: hidden;
+
+    font-family: 'Advent Pro', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+    text-align: justify;
+
+    color: #E9E9E9;
+}
+
+.about-section .container, .portfolio-section .container,.skill-section .container {
+    max-width: 91%;
+}
+
+.about-section .container > .content {
+    position: relative;
+    padding: 25px 12% 0 0 !important;
+}
+
+.about-section .container > .video-block {
+    height: 520px;
+    padding: 0;
+}
+
+.about-section .h1-secondary {
+    margin-bottom: 24px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 65px;
+    letter-spacing: 0;
+}
+
+.about-section .btn-primary {
+    padding: .6em 1.5em;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    margin-top: 15px;
+}
+
+/*
+ * Portfolio Section
+ */
+.portfolio-section {
+    height: max-content;
+    padding: 70px 0 70px 0;
+}
+
+.portfolio-section .h1-primary {
+    font-family: Raleway;
+    font-style: normal;
+    font-size: 65px;
+    font-weight: 600;
+    line-height: 88px;
+    margin-bottom: 32px;
+}
+
+.portfolio-section .card {
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+
+.portfolio-section .card-technologies .btn {
+    padding: .1em 3px;
+    width: 20px !important;
+    flex: 0 0 12%;
+    margin-right: 5px;
+    font-size: 13px;
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: 600;
+    border-color: white;
+}
+.portfolio-section .card .card-technologies .btn:hover {
+    color: #785cc5;
+    background: white !important;
+}
+
+.portfolio-section .box .btn {
+    margin-right: 2px;
+    font-size: 18px;
+    height: 40px;
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: 600;
+    color: #7659c7;
+    background: white;
+}
+
+.portfolio-section .preview-btn {
+    color: rgb(15, 136, 85);
+}
+
+.portfolio-section .box .btn:hover {
+    background: rgb(228, 228, 228);
+}
+
+.projects-container
+{
+    position: relative;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    justify-content: center;
+    gap: 20px 20px;
+}
+
+.project-card {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    box-shadow: -1px -1px 5px 1px rgba(51, 51, 51, 0.349);
+}
+
+.project-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card .box-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.63);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    justify-content: flex-end;
+    overflow: hidden;
+    transition: opacity 250ms ease-in, padding .1s ease;
+}
+
+.project-card .card-title {
+    width: 100%;
+    font-size: 23px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.project-card:hover .box-content {
+    padding: 15px 10px;
+    opacity: 1;
+}
+
+.project-card .temp-card-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 8px 0 0 15px;
+    margin: 0;
+    font-size: 23px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all .3s ease .2s;
+    vertical-align: middle;
+    width: 100%;
+    height: 15%;
+    color: white;
+    background: rgba(51, 51, 51, 0.863);
+}
+
+.project-card:hover .temp-card-title {
+    transition: all .0s ease 50ms;
+    opacity: 0;
+}
+
+/*
+ * Contact section
+ */
+
+.contact-section {
+    background: linear-gradient(79.64deg, #1E242D 0%, rgba(40, 47, 57, 0.95) 100.44%);
+    background-attachment: fixed;
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.15);
+    color: white;
+    height: 680px;
+    padding-top: 110px;
+    overflow: hidden;
+
+    font-family: 'Advent Pro', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+    text-align: justify;
+
+    color: #E9E9E9;
+}
+
